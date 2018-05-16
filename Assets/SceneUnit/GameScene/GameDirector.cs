@@ -17,16 +17,32 @@ public class GameDirector : MonoBehaviour {
     public GameObject TimeCounta;
     public GameObject GameSeManager;
 
+    public Button LeftButton;
+    public Button RightButton;
+
     public static int score;
     float outTime;
+    public int PlayerAvaFlg;
+
+    public float speed = 5;
 
     AudioSource OneDamageSE;
     AudioSource TwoDamageSE;
     AudioSource CureSE;
 
+    public Sprite PlayerSprite;
+
     // Use this for initialization
     void Start () {
-                
+
+        //プレイヤーアバターの設定
+        PlayerAvaFlg = PlayerPrefs.GetInt("Avatar", 0);
+        
+        if(PlayerAvaFlg != 0)
+        {
+            SetPlayer();
+        }
+        
         //スコア・表示初期化
         TimeCounta.GetComponent<Text>().text = "0";
         score = 0;
@@ -108,7 +124,23 @@ public class GameDirector : MonoBehaviour {
             .Where(_ => HpGauge.GetComponent<Image>().fillAmount < 0.09f)
             .FirstOrDefault()
             .Subscribe(_ => StartCoroutine(EndCoroutine()));
-            
+
+        ////////////////////////////////////////////////////////////////
+
+
+
+        /////////////////プレイヤーの操作に関わるストリーム//////////////
+
+        //ボタンを押すと左へ行く
+        LeftButton.OnPointerDownAsObservable()
+            .Subscribe(player => LeftMove())
+            .AddTo(this);
+
+        //ボタンを押すと右へ行く
+        RightButton.OnPointerDownAsObservable()
+            .Subscribe(player => RightMove())
+            .AddTo(this);
+
         ////////////////////////////////////////////////////////////////
 
     }
@@ -182,7 +214,41 @@ public class GameDirector : MonoBehaviour {
         CallResultScene();
     }
 
-    
+    //プレイヤーを左に動かすメソッド
+    public void LeftMove()
+    {
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * -1.0f, 0);
+    }
+
+    //プレイヤーを右に動かすメソッド
+    public void RightMove()
+    {
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * 1.0f, 0);
+    }
+
+    //プレイヤーのアバターをシーン上に生成するメソッド
+    public void SetPlayer()
+    {
+        if (PlayerAvaFlg == 1)
+        {
+            PlayerSprite = Resources.Load("TestPlay2", typeof(Sprite)) as Sprite;
+            player.GetComponent<SpriteRenderer>().sprite = PlayerSprite;
+        }
+        else if (PlayerAvaFlg == 2)
+        {
+            PlayerSprite = Resources.Load("TestPlay3", typeof(Sprite)) as Sprite;
+            player.GetComponent<SpriteRenderer>().sprite = PlayerSprite;
+        }
+        else
+        {
+            PlayerAvaFlg = 0;
+            PlayerSprite = Resources.Load("player", typeof(Sprite)) as Sprite;
+            player.GetComponent<SpriteRenderer>().sprite = PlayerSprite;
+        }
+        
+    }
+
+
     // Update is called once per frame
     void Update () {
         

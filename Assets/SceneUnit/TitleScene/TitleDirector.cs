@@ -8,31 +8,38 @@ using UniRx;
 using UniRx.Triggers;
 
 public class TitleDirector : MonoBehaviour {
-
+    
+    //ゲームオブジェクトの変数
     public Button StartButton;
     public Button RankingButton;
+    public Button SettingButton;
     public GameObject FadeObj;
     public GameObject SeManager;
 
+    //フェードに関わる変数
     float fadeSpeed = 0.02f;
     float red, green, blue, alpha;
     public bool IsFadeOut = false;
     public bool IsFadeIn = true;
 
+    //SE用変数
     AudioSource StartSE;
-    AudioSource RankingSE;
+    AudioSource MoveSE;
+
+    //プレイヤーアバターを決定するステータス
+
 
     // Use this for initialization
     void Start()
     {
         //BGMを流す
-        BgmManager.Instance.Play("BarabaraKokoro");
+        BgmManager.Instance.Play("TitleBGM");
 
         ////////////////////SEの準備////////////////////
 
         AudioSource[] TitleSEs = SeManager.GetComponents<AudioSource>();
         StartSE = TitleSEs[0];
-        RankingSE = TitleSEs[1];
+        MoveSE = TitleSEs[1];
         
         ////////////////////////////////////////////////
 
@@ -73,6 +80,11 @@ public class TitleDirector : MonoBehaviour {
         RankingButton.onClick.AsObservable()
             .FirstOrDefault()
             .Subscribe(_ => StartCoroutine(RankingStart()));
+
+        /////セッティングボタン
+        SettingButton.onClick.AsObservable()
+            .FirstOrDefault()
+            .Subscribe(_ => StartCoroutine(SettingStart()));
 
         ///////////////////////////////////////////////////////////////
     }
@@ -121,10 +133,19 @@ public class TitleDirector : MonoBehaviour {
     //ランキングシーンへ遷移するメソッド
     IEnumerator RankingStart()
     {
-        RankingSE.Play();
+        MoveSE.Play();
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("RankingScene");
     }
+
+    //キャラ選択シーンへ遷移するメソッド
+    IEnumerator SettingStart()
+    {
+        MoveSE.Play();
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("PlayerSelectScene");
+    }
+
 
     //スタートボタン押下時のコルーチン
     IEnumerator GameStartCoroutine()

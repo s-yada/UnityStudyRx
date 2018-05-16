@@ -5,6 +5,7 @@ Assets/PreGameScene.unity
 Assets/GameScene.unity
 Assets/ResultScene.unity
 Assets/RankingScene.unity
+Assets/PlayerSelectScene.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.MainThreadDispatcher
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableCancelTrigger
@@ -24,7 +25,7 @@ df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableMoveTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableUpdateTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableVisibleTrigger
-6388ae78092087d3669a4549ab4cd587 Assembly-CSharp.dll:.TitleDirector
+5c7ac69d15f2383e9684811acb62cf58 Assembly-CSharp.dll:.TitleDirector
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -141,7 +142,7 @@ dad06685cbd6e9edabdb404f7e4b3b97 Assembly-CSharp.dll:.PlayerController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableSelectTrigger
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
-2f18aa36d5358ff15158346b72ac2dae Assembly-CSharp.dll:.GameDirector
+6c96289092140ef04ca917be677bea2a Assembly-CSharp.dll:.GameDirector
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableTriggerTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableCollisionTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableTrigger2DTrigger
@@ -184,7 +185,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableDeselectTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Examples.Sample01_ObservableWWW
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableDragTrigger
-80cf50d1791edb1b19ecdb1e247b1eee Assembly-CSharp.dll:.PreGameDirector
+4a845c52eb36de0574bf0f6b639b0791 Assembly-CSharp.dll:.PreGameDirector
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Examples.Sample07_OrchestratIEnumerator
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Examples.Sample02_ObservableTriggers
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableRectTransformTrigger
@@ -195,4 +196,5 @@ bf454e791bbd9e74802211b3e433740a Assembly-CSharp.dll:.ItemGenerator
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableSubmitTrigger
 d38b02780491ba9f063add61f433b933 Assembly-CSharp.dll:.BgmManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Examples.Sample06_ConvertToCoroutine
+31303b43982285cf2264eb195370295d Assembly-CSharp.dll:.SelectDirector
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Examples.Sample08_DetectDoubleClick

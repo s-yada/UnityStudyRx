@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    //左に動くメソッド
+    //プレイヤーを左に動かすメソッド
     public void LeftMove()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(speed * -1.0f, 0);

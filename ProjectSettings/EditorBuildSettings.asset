@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RankingScene.unity
     guid: 2d0722f68deb38b4c87bf76630ccc096
+  - enabled: 1
+    path: Assets/PlayerSelectScene.unity
+    guid: 5008de6bee187b2418c057fba62cafbb
