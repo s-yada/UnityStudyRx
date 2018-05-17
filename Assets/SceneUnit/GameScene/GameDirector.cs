@@ -37,12 +37,9 @@ public class GameDirector : MonoBehaviour {
 
         //プレイヤーアバターの設定
         PlayerAvaFlg = PlayerPrefs.GetInt("Avatar", 0);
-        
-        if(PlayerAvaFlg != 0)
-        {
-            SetPlayer();
-        }
-        
+                
+        SetPlayer();
+                
         //スコア・表示初期化
         TimeCounta.GetComponent<Text>().text = "0";
         score = 0;
@@ -239,6 +236,11 @@ public class GameDirector : MonoBehaviour {
             PlayerSprite = Resources.Load("TestPlay3", typeof(Sprite)) as Sprite;
             player.GetComponent<SpriteRenderer>().sprite = PlayerSprite;
         }
+        //else if (PlayerAvaFlg == 0)
+        //{
+        //    PlayerSprite = Resources.Load("player", typeof(Sprite)) as Sprite;
+        //    player.GetComponent<SpriteRenderer>().sprite = PlayerSprite;
+        //}
         else
         {
             PlayerAvaFlg = 0;
